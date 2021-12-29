@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ColorPropertyStyled } from '../styledComponents';
 
 class ColorProperty extends Component {
   static propTypes = {
@@ -11,10 +12,10 @@ class ColorProperty extends Component {
     const { props: { handleChangeInput, value } } = this;
 
     return (
-      <div className="property">
-        <p className="property-name">Color</p>
+      <ColorPropertyStyled className="property">
+        <p className="property-name">Color:</p>
         <input type="color" name="color" value={ value } onChange={ handleChangeInput } />
-      </div>
+      </ColorPropertyStyled>
     );
   }
 }

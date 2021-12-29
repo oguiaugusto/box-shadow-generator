@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { PropertyStyled, InputRange } from '../styledComponents';
 
 class Property extends Component {
   static propTypes = {
@@ -22,29 +23,32 @@ class Property extends Component {
     const { props: { handleChangeInput, name, id, value, min, max, step } } = this;
 
     return (
-      <div className="property">
+      <PropertyStyled className="property">
         <p className="property-name">{name}</p>
-        <div className="property-input">
-          <input
-            type="number"
-            name={ id }
-            max={ max }
-            min={ min }
-            value={ value }
-            onChange={ handleChangeInput }
-          />
-          <span>px</span>
+        <div className="property-row">
+          <div className="property-input">
+            <InputRange
+              type="range"
+              name={ id }
+              max={ max }
+              min={ min }
+              step={ step }
+              value={ value }
+              onChange={ handleChangeInput }
+            />
+            <input
+              type="number"
+              name={ id }
+              max={ max }
+              min={ min }
+              value={ value }
+              onChange={ handleChangeInput }
+              className="input-value"
+            />
+            <span>px</span>
+          </div>
         </div>
-        <input
-          type="range"
-          name={ id }
-          max={ max }
-          min={ min }
-          step={ step }
-          value={ value }
-          onChange={ handleChangeInput }
-        />
-      </div>
+      </PropertyStyled>
     );
   }
 }

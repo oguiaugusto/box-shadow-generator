@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { CodeBlockStyled } from '../styledComponents';
 
 class CodeBlock extends Component {
   static propTypes = {
@@ -9,20 +10,20 @@ class CodeBlock extends Component {
   render() {
     const { props: { boxShadowCode } } = this;
     return (
-      <code className="code-block">
+      <CodeBlockStyled className="code-block">
         <span className="code-row">
           <span className="code-key">{`box-shadow: `}</span>
-          <span className="code-value">{boxShadowCode}</span>
+          <span className="code-value">{boxShadowCode};</span>
         </span>
         <span className="code-row">
           <span className="code-key">{`-webkit-box-shadow: `}</span>
-          <span className="code-value">{boxShadowCode}</span>
+          <span className="code-value">{boxShadowCode};</span>
         </span>
         <span className="code-row">
           <span className="code-key">{`-moz-box-shadow: `}</span>
-          <span className="code-value">{boxShadowCode}</span>
+          <span className="code-value">{boxShadowCode};</span>
         </span>
-      </code>
+      </CodeBlockStyled>
     );
   }
 }

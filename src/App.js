@@ -28,13 +28,16 @@ class App extends Component {
     const propertiesObj = { offX, offY, blur, spread, color, opacity };
 
     return (
-      <main>
-        <Properties
-          handleChangeInput={ this.handleChangeInput }
-          propertiesObj= { propertiesObj }
-        />
-        <Preview propertiesObj={ propertiesObj } />
-      </main>
+      <>
+        <h1>Box Shadow Generator</h1>
+        <main>
+          <Properties
+            handleChangeInput={ this.handleChangeInput }
+            propertiesObj= { propertiesObj }
+          />
+          <Preview propertiesObj={ propertiesObj } />
+        </main>
+      </>
     );
   }
 }
