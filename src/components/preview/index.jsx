@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PreviewBox from './PreviewBox';
+import CodeBlock from './CodeBlock';
 
 class Preview extends Component {
   static propTypes = {
@@ -51,6 +52,7 @@ class Preview extends Component {
       <div className="preview">
         <h2>Preview</h2>
         <PreviewBox boxShadowCode={ this.generateBoxShadowCode() } />
+        <CodeBlock boxShadowCode={ this.generateBoxShadowCode() } />
       </div>
     );
   }
