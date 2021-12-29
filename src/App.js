@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import { Properties, Preview } from './components';
 
 class App extends Component {
   render() {
-    return <div>App</div>;
+    return (
+      <main>
+        <Properties />
+        <Preview />
+      </main>
+    );
   }
 }
 
