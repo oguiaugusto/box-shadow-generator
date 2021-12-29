@@ -33,7 +33,7 @@ class App extends Component {
           handleChangeInput={ this.handleChangeInput }
           propertiesObj= { propertiesObj }
         />
-        <Preview />
+        <Preview propertiesObj={ propertiesObj } />
       </main>
     );
   }
