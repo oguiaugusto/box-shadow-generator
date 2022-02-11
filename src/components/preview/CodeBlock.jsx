@@ -17,16 +17,6 @@ export default function CodeBlock() {
 
   return (
     <CodeBlockStyled className="code-block">
-      <button
-        type="button"
-        onClick={ () => {
-          copy(copyCode);
-          setCopied(true);
-          setTimeout(() => setCopied(false), SECOND)
-        } }
-      >
-        {copied ? 'Copied' : 'Copy'}
-      </button>
       <span className="code-row">
         <span className="code-key">{`box-shadow: `}</span>
         <span className="code-value">{boxShadowCode};</span>
@@ -39,6 +29,16 @@ export default function CodeBlock() {
         <span className="code-key">{`-moz-box-shadow: `}</span>
         <span className="code-value">{boxShadowCode};</span>
       </span>
+      <button
+        type="button"
+        onClick={ () => {
+          copy(copyCode);
+          setCopied(true);
+          setTimeout(() => setCopied(false), SECOND)
+        } }
+      >
+        {copied ? 'Copied' : 'Copy'}
+      </button>
     </CodeBlockStyled>
   );
 }

@@ -184,6 +184,7 @@ const CodeBlockStyled = styled.code`
   color: #eee;
   padding: 1rem;
   border-radius: 10px;
+  border-top-right-radius: 0;
   font-size: 11px;
   display: flex;
   flex-flow: column nowrap;
@@ -192,24 +193,24 @@ const CodeBlockStyled = styled.code`
 
   button {
     position: absolute;
-    background-color: inherit;
-    color: #eee;
-    border: 1px solid #eee;
-    right: 15px;
-    top: 10px;
+    background-color: #eee;
+    color: #353535;
+    border: 1px solid #353535;
+    right: 0;
+    top: -12px;
     font-size: 8px;
     cursor: pointer;
     transition-duration: 200ms;
   }
 
   button:hover {
-    color: #252525;
-    background-color: #eee;
+    color: #eee;
+    background-color: #353535;
   }
 
   button:active {
-    color: #252525;
-    background-color: #ebebeb;
+    color: #ebebeb;
+    background-color: #353535;
   }
 
   .code-key {
