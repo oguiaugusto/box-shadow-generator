@@ -195,7 +195,7 @@ const CodeBlockStyled = styled.code`
     background-color: inherit;
     color: #eee;
     border: 1px solid #eee;
-    right: 10px;
+    right: 15px;
     top: 10px;
     font-size: 8px;
     cursor: pointer;
