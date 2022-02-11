@@ -188,6 +188,29 @@ const CodeBlockStyled = styled.code`
   display: flex;
   flex-flow: column nowrap;
   margin: 1rem 0 0;
+  position: relative;
+
+  button {
+    position: absolute;
+    background-color: inherit;
+    color: #eee;
+    border: 1px solid #eee;
+    right: 10px;
+    top: 10px;
+    font-size: 8px;
+    cursor: pointer;
+    transition-duration: 200ms;
+  }
+
+  button:hover {
+    color: #252525;
+    background-color: #eee;
+  }
+
+  button:active {
+    color: #252525;
+    background-color: #ebebeb;
+  }
 
   .code-key {
     color: #f0b852;
