@@ -1,35 +1,19 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
+import BoxShadowContext from '../context/BoxShadowContext';
 import { Box } from '../styledComponents';
 
-class PreviewBox extends Component {
-  static propTypes = {
-    boxShadowCode: PropTypes.string.isRequired,
-  }
+export default function PreviewBox() {
+  const { boxShadowCode } = useContext(BoxShadowContext);
+  const [boxColor, setBoxColor] = useState('#f3bf55');
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      boxColor: '#f3bf55',
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange({ target: { name, value } }) {
-    this.setState({ [name]: value });
-  }
-
-  render() {
-    const { state: { boxColor }, props: { boxShadowCode } } = this;
-
-    return (
-      <Box bg={ boxColor } boxShadowCode={ boxShadowCode }>
-        <input type="color" name="boxColor" value={ boxColor } onChange={ this.handleChange } />
-      </Box>
-    );
-  }
+  return (
+    <Box bg={ boxColor } boxShadowCode={ boxShadowCode }>
+      <input
+        type="color"
+        name="boxColor"
+        value={ boxColor }
+        onChange={ ({ target: { value } }) => setBoxColor(value) }
+      />
+    </Box>
+  );
 }
-
-export default PreviewBox;

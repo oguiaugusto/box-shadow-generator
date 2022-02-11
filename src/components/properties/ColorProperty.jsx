@@ -1,23 +1,18 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { ColorPropertyStyled } from '../styledComponents';
+import BoxShadowContext from '../context/BoxShadowContext';
 
-class ColorProperty extends Component {
-  static propTypes = {
-    handleChangeInput: PropTypes.func.isRequired,
-    value: PropTypes.string.isRequired,
-  }
-
-  render() {
-    const { props: { handleChangeInput, value } } = this;
-
-    return (
-      <ColorPropertyStyled className="property">
-        <p className="property-name">Color:</p>
-        <input type="color" name="color" value={ value } onChange={ handleChangeInput } />
-      </ColorPropertyStyled>
-    );
-  }
+export default function ColorProperty() {
+  const { properties, handleChangeInput } = useContext(BoxShadowContext);
+  return (
+    <ColorPropertyStyled className="property">
+      <p className="property-name">Color:</p>
+      <input
+        type="color"
+        name="color"
+        value={ properties.color }
+        onChange={ handleChangeInput }
+      />
+    </ColorPropertyStyled>
+  );
 }
-
-export default ColorProperty;
